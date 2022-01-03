@@ -1,5 +1,7 @@
 package jdbc.com.test;
 
+import api.dao.jdbc.StudentDAO;
+import api.dao.jdbc.StudentDAOImpl;
 import com.jdbc.api.Student;
 
 public class Test {
@@ -8,5 +10,8 @@ public class Test {
         newStudent1.setRollNo(001);
         newStudent1.setName("Collins");
         newStudent1.setAddress("Sakina");
+
+        StudentDAO studentDAO = new StudentDAOImpl();
+        studentDAO.insert(newStudent1);
     }
 }
