@@ -10,7 +10,9 @@ public class StudentDAOImpl implements StudentDAO {
     @Override
     public void insert(Student student) {
         // The logic to store the student object into the database
-
+        String sql = "INSERT INTO student VALUES (?, ?, ?)";
+        Object[] arg = {student.getRollNo(),student.getName(),student.getAddress()};
+        jdbcTemplate.update(sql, arg);
     }
 
 }
