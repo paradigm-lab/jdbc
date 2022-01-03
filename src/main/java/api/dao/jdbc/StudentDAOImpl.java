@@ -23,8 +23,8 @@ public class StudentDAOImpl implements StudentDAO {
 
     public DataSource getDataSource(){
         String url = "jdbc:postgresql://localhost:5432/school";
-        String username = "";
-        String password = "";
+        String username = "ccolaria";
+        String password = "collin";
 
         DataSource dataSource = new DriverManagerDataSource(url, username, password);
 
