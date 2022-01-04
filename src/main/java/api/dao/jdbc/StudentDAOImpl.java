@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 
 public class StudentDAOImpl implements StudentDAO {
 
-    private JdbcTemplate jdbcTemplate = new JdbcTemplate(getDataSource());
+    private JdbcTemplate jdbcTemplate;
 
     @Override
     public void insert(Student student) {
@@ -20,5 +20,5 @@ public class StudentDAOImpl implements StudentDAO {
         System.out.println("No of row inserted is: " + noOfRowInserted);
 
     }
-    
+
 }
