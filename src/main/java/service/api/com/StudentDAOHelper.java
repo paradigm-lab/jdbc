@@ -25,7 +25,7 @@ public class StudentDAOHelper {
         student2.setAddress("Zanzibar");
 
         Student student3 = new Student();
-        student3.setRollNo(1);
+        student3.setRollNo(3);
         student3.setName("Ismail");
         student3.setAddress("Dodoma");
 
