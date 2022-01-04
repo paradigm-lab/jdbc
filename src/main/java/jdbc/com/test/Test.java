@@ -23,12 +23,15 @@ public class Test {
         newStudent1.setAddress("Raphael");
 
         studentDAOImpl.insert(newStudent1);
-        */
+
 
         boolean isDeleted = studentDAOImpl.deleteRecordByRollNo(4);
         if(isDeleted) {
             System.out.println("The roll no 2 data got deleted.......>>");
         }
+        */
+
+        studentDAOImpl.deleteRecordByStudentNameAndStudentAddress("Collins", "Sakina");
 
     }
 }
