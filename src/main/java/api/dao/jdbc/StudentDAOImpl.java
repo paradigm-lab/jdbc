@@ -18,7 +18,7 @@ public class StudentDAOImpl implements StudentDAO {
 
     public void cleanUp() {
         String sql = "TRUNCATE TABLE student";
-        jdbcTemplate.update(sql);
+        jdbcTemplate.execute(sql);
         System.out.println("Table cleaned up>>>>");
     }
 
