@@ -5,6 +5,7 @@ import api.dao.jdbc.StudentDAOImpl;
 import com.jdbc.api.Student;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import service.api.com.StudentDAOHelper;
 
 public class Test {
     public static void main(String[] args) {
@@ -14,6 +15,9 @@ public class Test {
 
         // Getting the bean from the context
         StudentDAOImpl studentDAOImpl = context.getBean("studentDao", StudentDAOImpl.class);
+
+        StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
+        studentDAOHelper.setUpStudentTable();
 
 
         /*

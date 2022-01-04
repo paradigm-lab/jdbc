@@ -1,4 +1,4 @@
-package service.api.com;    
+package service.api.com;
 
 import api.dao.jdbc.StudentDAO;
 import com.jdbc.api.Student;
