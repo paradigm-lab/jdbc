@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository("studentDao")
@@ -59,6 +60,17 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public void insert(List<Student> students) {
-        
+        String sql = "INSERT INTO student VALUES(?, ?, ?)";
+
+        ArrayList<Object[]> sqlArgs = new ArrayList<>();
+
+        for (Student tempStudent : students) {
+            Object[] studentData = {tempStudent.getRollNo(),tempStudent.getName(),tempStudent.getAddress()};
+            sqlArgs.add(studentData);
+        }
+
+        jdbcTemplate.batchUpdate(sql, sqlArgs);
+
+        System.out.println("Batch Update completed !!!");
     }
 }
