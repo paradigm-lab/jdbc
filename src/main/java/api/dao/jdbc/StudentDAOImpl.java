@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository("studentDao")
 public class StudentDAOImpl implements StudentDAO {
 
@@ -21,6 +23,7 @@ public class StudentDAOImpl implements StudentDAO {
         jdbcTemplate.execute(sql);
         System.out.println("Table cleaned up>>>>");
     }
+
 
     @Override
     public void insert(Student student) {
@@ -51,5 +54,11 @@ public class StudentDAOImpl implements StudentDAO {
         System.out.println("No of rows got deleted are " + noOfRowsDeleted);
 
         return noOfRowsDeleted;
+    }
+
+
+    @Override
+    public void insert(List<Student> students) {
+        
     }
 }
