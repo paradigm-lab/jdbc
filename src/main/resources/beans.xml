@@ -15,6 +15,7 @@
        default-destroy-method="destroy">
 
     <context:component-scan base-package="api.dao.jdbc" />
+    <context:component-scan base-package="service.api.com" />
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 
