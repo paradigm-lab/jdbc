@@ -11,7 +11,8 @@ public class Test {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         System.out.println("Application context loaded....");
-        /*
+
+        // Getting the bean from the context
         StudentDAOImpl studentDAO = context.getBean("studentDao", StudentDAOImpl.class);
 
 
@@ -21,7 +22,5 @@ public class Test {
         newStudent1.setAddress("Dodoma");
 
         studentDAO.insert(newStudent1);
-
-         */
     }
 }
