@@ -20,15 +20,5 @@ public class StudentDAOImpl implements StudentDAO {
         System.out.println("No of row inserted is: " + noOfRowInserted);
 
     }
-
-    public DataSource getDataSource(){
-        String url = "jdbc:postgresql://localhost:5432/school?useSSL=false";
-        String username = "ccolaria";
-        String password = "collin";
-
-        DataSource dataSource = new DriverManagerDataSource(url, username, password);
-
-        return dataSource;
-    }
-
+    
 }
