@@ -13,14 +13,22 @@ public class Test {
         System.out.println("Application context loaded....");
 
         // Getting the bean from the context
-        StudentDAOImpl studentDAO = context.getBean("studentDao", StudentDAOImpl.class);
+        StudentDAOImpl studentDAOImpl = context.getBean("studentDao", StudentDAOImpl.class);
 
 
+        /*
         Student newStudent1 = new Student();
         newStudent1.setRollNo(006);
         newStudent1.setName("David");
         newStudent1.setAddress("Raphael");
 
-        studentDAO.insert(newStudent1);
+        studentDAOImpl.insert(newStudent1);
+        */
+
+        boolean isDeleted = studentDAOImpl.deleteRecordByRollNo(4);
+        if(isDeleted) {
+            System.out.println("The roll no 2 data got deleted.......>>");
+        }
+
     }
 }
