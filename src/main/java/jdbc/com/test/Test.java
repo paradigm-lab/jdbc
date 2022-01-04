@@ -31,7 +31,9 @@ public class Test {
         }
         */
 
-        studentDAOImpl.deleteRecordByStudentNameAndStudentAddress("Collins", "Sakina");
+        //studentDAOImpl.deleteRecordByStudentNameAndStudentAddress("Collins", "Sakina");
+
+        studentDAOImpl.cleanUp();
 
     }
 }

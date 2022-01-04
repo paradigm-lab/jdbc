@@ -16,6 +16,12 @@ public class StudentDAOImpl implements StudentDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    public void cleanUp() {
+        String sql = "TRUNCATE TABLE student";
+        jdbcTemplate.update(sql);
+        System.out.println("Table cleaned up>>>>");
+    }
+
     @Override
     public void insert(Student student) {
         // The logic to store the student object into the database
