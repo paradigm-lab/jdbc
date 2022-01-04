@@ -1,12 +1,14 @@
 package api.dao.jdbc;
 
 import com.jdbc.api.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class StudentDAOImpl implements StudentDAO {
 
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     // The setter method it is used to inject the dependency in the DAO class
