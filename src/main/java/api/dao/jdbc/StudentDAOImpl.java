@@ -2,10 +2,9 @@ package api.dao.jdbc;
 
 import com.jdbc.api.Student;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.stereotype.Repository;
 
-import javax.sql.DataSource;
-
+@Repository
 public class StudentDAOImpl implements StudentDAO {
 
     private JdbcTemplate jdbcTemplate;
