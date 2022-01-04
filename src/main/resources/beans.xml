@@ -16,9 +16,9 @@
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 
-        <constructor-arg name="url" value="jdbc:postgresql://localhost:5432/school?useSSL=false" />
-        <constructor-arg name="username" value="ccolaria" />
-        <constructor-arg name="password" value="collin" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/school?useSSL=false" />
+        <property name="username" value="ccolaria" />
+        <property name="password" value="collin" />
 
     </bean>
 
