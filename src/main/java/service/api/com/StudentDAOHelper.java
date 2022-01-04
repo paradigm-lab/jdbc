@@ -2,6 +2,8 @@ package service.api.com;
 
 import com.jdbc.api.Student;
 
+import java.util.ArrayList;
+
 public class StudentDAOHelper {
 
     public void setUpStudentTable() {
@@ -20,6 +22,10 @@ public class StudentDAOHelper {
         student3.setName("Ismail");
         student3.setAddress("Dodoma");
 
+        ArrayList<Student> studentList = new ArrayList<>();
+        studentList.add(student1);
+        studentList.add(student2);
+        studentList.add(student3);
     }
 
 }
