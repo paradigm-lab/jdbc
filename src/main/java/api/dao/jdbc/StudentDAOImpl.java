@@ -10,6 +10,11 @@ public class StudentDAOImpl implements StudentDAO {
 
     private JdbcTemplate jdbcTemplate;
 
+    // The setter method it is used to inject the dependency in the DAO class
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
     @Override
     public void insert(Student student) {
         // The logic to store the student object into the database
