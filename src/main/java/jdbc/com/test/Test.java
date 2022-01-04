@@ -33,7 +33,7 @@ public class Test {
 
         //studentDAOImpl.deleteRecordByStudentNameAndStudentAddress("Collins", "Sakina");
 
-        studentDAOImpl.cleanUp();
+        //studentDAOImpl.cleanUp();
 
     }
 }

@@ -1,4 +1,4 @@
-package service.api.com;
+package service.api.com;    
 
 import api.dao.jdbc.StudentDAO;
 import com.jdbc.api.Student;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
-@Service
+@Service("studentDaoHelper")
 public class StudentDAOHelper {
 
     @Autowired
