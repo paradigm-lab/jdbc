@@ -17,9 +17,9 @@ public class Test {
 
 
         Student newStudent1 = new Student();
-        newStudent1.setRollNo(005);
-        newStudent1.setName("Kelvin");
-        newStudent1.setAddress("Sudhir");
+        newStudent1.setRollNo(006);
+        newStudent1.setName("David");
+        newStudent1.setAddress("Raphael");
 
         studentDAO.insert(newStudent1);
     }
