@@ -18,4 +18,8 @@
 
     </bean>
 
+    <bean id="jdbcTemplateObject" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg name="datasource" ref="datasource" />
+    </bean>
+
 </beans>
