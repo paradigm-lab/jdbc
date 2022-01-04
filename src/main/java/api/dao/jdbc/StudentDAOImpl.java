@@ -35,4 +35,15 @@ public class StudentDAOImpl implements StudentDAO {
 
         return noOfRowDeleted == 1;
     }
+
+    @Override
+    public int deleteRecordByStudentNameAndStudentAddress(String studentName, String studentAddress) {
+        String sql = "DELETE FROM student WHERE student_name = ? OR student_addres = ?";
+        Object[] arguments = {studentName, studentAddress};
+
+        int noOfRowsDeleted = jdbcTemplate.update(sql, arguments);
+        System.out.println("No of rows got deleted are " + noOfRowsDeleted);
+
+        return noOfRowsDeleted;
+    }
 }
