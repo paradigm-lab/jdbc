@@ -22,7 +22,7 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     public DataSource getDataSource(){
-        String url = "jdbc:postgresql://localhost:5432/school";
+        String url = "jdbc:postgresql://localhost:5432/school?useSSL=false";
         String username = "ccolaria";
         String password = "collin";
 
