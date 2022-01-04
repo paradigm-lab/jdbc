@@ -14,7 +14,7 @@ public class Test {
         System.out.println("Application context loaded....");
 
         // Getting the bean from the context
-        StudentDAOImpl studentDAOImpl = context.getBean("studentDao", StudentDAOImpl.class);
+        //StudentDAOImpl studentDAOImpl = context.getBean("studentDao", StudentDAOImpl.class);
 
         StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
         studentDAOHelper.setUpStudentTable();
