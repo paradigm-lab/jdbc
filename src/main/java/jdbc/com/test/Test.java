@@ -18,11 +18,11 @@ public class Test {
         // Getting the bean from the context
         StudentDAOImpl studentDAOImpl = context.getBean("studentDao", StudentDAOImpl.class);
 
-        //StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
+        StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
         //studentDAOHelper.setUpStudentTable();
 
         List<Student> studentList = studentDAOImpl.findAllStudent();
-
+        studentDAOHelper.printStudent(studentList);
 
 
 
