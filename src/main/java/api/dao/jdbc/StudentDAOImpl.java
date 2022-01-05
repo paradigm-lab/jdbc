@@ -4,6 +4,7 @@ import com.jdbc.api.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import rowmapper.google.selenium.StudentRowMapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +79,7 @@ public class StudentDAOImpl implements StudentDAO {
     public List<Student> findAllStudent() {
         String selectSql = "SELECT * FROM student";
 
-        List<Student> studentList = jdbcTemplate.query(selectSql, );
+        List<Student> studentList = jdbcTemplate.query(selectSql, new StudentRowMapper());
 
         return null;
     }
