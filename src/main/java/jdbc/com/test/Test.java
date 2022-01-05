@@ -19,12 +19,13 @@ public class Test {
         StudentDAOImpl studentDAOImpl = context.getBean("studentDao", StudentDAOImpl.class);
 
         StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
-        //studentDAOHelper.setUpStudentTable();
+        studentDAOHelper.setUpStudentTable();
 
         List<Student> studentList = studentDAOImpl.findAllStudent();
         studentDAOHelper.printStudent(studentList);
 
-
+        // CLEAN UP THE TABLE DATA
+        studentDAOImpl.cleanUp();
 
         /*
         Student newStudent1 = new Student();
@@ -43,7 +44,6 @@ public class Test {
 
         //studentDAOImpl.deleteRecordByStudentNameAndStudentAddress("Collins", "Sakina");
 
-        //studentDAOImpl.cleanUp();
 
     }
 }
