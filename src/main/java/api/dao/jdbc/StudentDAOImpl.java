@@ -86,7 +86,7 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public Student findStudentByRollNo(int roolNo) {
-        String selectsql = "SELECT * FROM student WHERE roll_no = ?";
+        String selectsql = "SELECT roll_no AS rollNo, student_name AS name, student_addres AS address FROM student WHERE roll_no = ?";
 
         Student student = jdbcTemplate.queryForObject(selectsql, new BeanPropertyRowMapper<Student>(Student.class), roolNo);
 
