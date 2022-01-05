@@ -19,10 +19,17 @@ public class Test {
         StudentDAOImpl studentDAOImpl = context.getBean("studentDao", StudentDAOImpl.class);
 
         StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
+        // SETTING UP THE TABLE DATA
         studentDAOHelper.setUpStudentTable();
 
+        // CALL THE findAllStudent() >> FETCHING THE DATA FROM THE TABLE
         List<Student> studentList = studentDAOImpl.findAllStudent();
         studentDAOHelper.printStudent(studentList);
+
+        //QUERYING FOR A SPECIFIC OBJECT
+        System.out.println("Fatching the student with the roll no 1");
+        Student student = studentDAOImpl.findStudentByRollNo(1);
+        System.out.println(student.toString());
 
         // CLEAN UP THE TABLE DATA
         studentDAOImpl.cleanUp();
