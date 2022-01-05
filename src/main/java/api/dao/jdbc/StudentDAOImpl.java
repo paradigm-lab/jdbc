@@ -81,6 +81,6 @@ public class StudentDAOImpl implements StudentDAO {
 
         List<Student> studentList = jdbcTemplate.query(selectSql, new StudentRowMapper());
 
-        return null;
+        return studentList;
     }
 }
