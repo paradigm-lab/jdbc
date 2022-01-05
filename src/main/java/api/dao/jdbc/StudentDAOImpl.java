@@ -73,4 +73,13 @@ public class StudentDAOImpl implements StudentDAO {
 
         System.out.println("Batch Update completed !!!");
     }
+
+    @Override
+    public List<Student> findAllStudent() {
+        String selectSql = "SELECT * FROM student";
+
+        List<Student> studentList = jdbcTemplate.query(selectSql, );
+
+        return null;
+    }
 }
