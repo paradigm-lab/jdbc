@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service("studentDaoHelper")
 public class StudentDAOHelper {
@@ -35,6 +36,12 @@ public class StudentDAOHelper {
         studentList.add(student3);
 
         studentDAOImpl.insert(studentList);
+    }
+
+    public void printStudent(List<Student> students) {
+        for (Student tempStudent : students) {
+            System.out.println(tempStudent);
+        }
     }
 
 }
