@@ -88,7 +88,7 @@ public class StudentDAOImpl implements StudentDAO {
     public Student findStudentByRollNo(int roolNo) {
         String selectsql = "SELECT * FROM student WHERE roll_no = ?";
 
-        Student student = jdbcTemplate.queryForObject(selectsql, new BeanPropertyRowMapper<Student>(), roolNo);
+        Student student = jdbcTemplate.queryForObject(selectsql, new BeanPropertyRowMapper<Student>(Student.class), roolNo);
 
         return student;
     }
