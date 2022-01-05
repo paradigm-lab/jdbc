@@ -13,4 +13,7 @@ public interface StudentDAO {
     boolean deleteRecordByRollNo(int roolNo);
 
     int deleteRecordByStudentNameAndStudentAddress(String studentName, String studentAddress);
+
+    List<Student> findAllStudent();
+
 }
