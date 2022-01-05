@@ -16,4 +16,6 @@ public interface StudentDAO {
 
     List<Student> findAllStudent();
 
+    Student findStudentByRollNo(int roolNo);
+
 }
