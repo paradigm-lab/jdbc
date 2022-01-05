@@ -7,6 +7,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.api.com.StudentDAOHelper;
 
+import java.util.List;
+
 public class Test {
     public static void main(String[] args) {
 
@@ -19,7 +21,8 @@ public class Test {
         //StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
         //studentDAOHelper.setUpStudentTable();
 
-        studentDAOImpl.findAllStudent();
+        List<Student> studentList = studentDAOImpl.findAllStudent();
+
 
 
 
