@@ -10,6 +10,7 @@ import rowmapper.google.selenium.StudentRowMapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Repository("studentDao")
 public class StudentDAOImpl implements StudentDAO {
@@ -101,5 +102,13 @@ public class StudentDAOImpl implements StudentDAO {
         List<Student> studentList = jdbcTemplate.query(sql, new StudentResultSetExtractor(), name);
 
         return studentList;
+    }
+
+    @Override
+    public Map<String, List<Student>> groupStudentByAddress() {
+        String sql = "SELECT student_addres, student_name FROM student WHERE student_addres = 'new york' OR student_addres = 'Blr' ";
+        Map<String, List<Student>> studentMap = jdbcTemplate.query(sql, );
+
+        return studentMap;
     }
 }
