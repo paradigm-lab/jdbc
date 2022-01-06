@@ -1,6 +1,4 @@
 package result.set.extractor;
-
-import com.jdbc.api.Student;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
