@@ -3,6 +3,7 @@ package api.dao.jdbc;
 import com.jdbc.api.Student;
 
 import java.util.List;
+import java.util.Map;
 
 public interface StudentDAO {
 
@@ -19,5 +20,7 @@ public interface StudentDAO {
     Student findStudentByRollNo(int roolNo);
 
     List<Student> findStudentByName(String name);
+
+    Map<String, List<Student>> groupStudentByAddress();
 
 }
