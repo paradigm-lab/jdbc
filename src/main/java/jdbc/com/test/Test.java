@@ -31,7 +31,7 @@ public class Test {
         // Using the RowMapper
         System.out.println("***********************************************");
         System.out.println("Printing all the student from the Student table");
-        System.out.println("Using the RowMapper");
+        System.out.println("Using the ResultSetExtractor approach");
 
         List<Student> students = studentDAOImpl.findAllStudent();
         studentDAOHelper.printStudent(students);

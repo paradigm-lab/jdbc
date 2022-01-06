@@ -80,7 +80,7 @@ public class StudentDAOImpl implements StudentDAO {
     @Override
     public List<Student> findAllStudent() {
         String selectSql = "SELECT * FROM student";
-        List<Student> studentList = jdbcTemplate.query(selectSql, new StudentRowMapper());
+        List<Student> studentList = jdbcTemplate.query(selectSql, new StudentResultSetExtractor());
 
         return studentList;
     }
