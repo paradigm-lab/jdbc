@@ -15,10 +15,28 @@ public class Test {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         System.out.println("Application context loaded....");
 
+
         // Getting the bean from the context
         StudentDAOImpl studentDAOImpl = context.getBean("studentDao", StudentDAOImpl.class);
 
         StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
+
+        // Using the result Set Extractor
+        System.out.println("Printing students where the name is Collins>>>>>>>>");
+        System.out.println("Using ResultSetExtractor approach>>>>>>>>>");
+
+        List<Student> findStudentByName = studentDAOImpl.findStudentByName("Collins");
+        studentDAOHelper.printStudent(findStudentByName);
+
+        // Using the RowMapper
+        System.out.println("***********************************************");
+        System.out.println("Printing all the student from the Student table");
+        System.out.println("Using the RowMapper");
+
+        List<Student> students = studentDAOImpl.findAllStudent();
+        studentDAOHelper.printStudent(students);
+
+        /*
         // SETTING UP THE TABLE DATA
         studentDAOHelper.setUpStudentTable();
 
@@ -33,6 +51,8 @@ public class Test {
 
         // CLEAN UP THE TABLE DATA
         //studentDAOImpl.cleanUp();
+        */
+
 
         /*
         Student newStudent1 = new Student();
@@ -50,6 +70,9 @@ public class Test {
         */
 
         //studentDAOImpl.deleteRecordByStudentNameAndStudentAddress("Collins", "Sakina");
+
+
+
 
 
     }
