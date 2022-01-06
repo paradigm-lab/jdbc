@@ -95,9 +95,9 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public List<Student> findStudentByName(String name) {
-        String sql = "SELECT * FROM student";
+        String sql = "SELECT * FROM student WHERE student_name = ?";
 
-        jdbcTemplate.query(sql, );
+        jdbcTemplate.query(sql, rse, name);
 
         return null;
     }
