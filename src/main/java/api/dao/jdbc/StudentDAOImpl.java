@@ -106,7 +106,7 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public Map<String, List<String>> groupStudentByAddress() {
-        String sql = "SELECT student_addres, student_name FROM student WHERE student_addres = 'new york' OR student_addres = 'Blr' ";
+        String sql = "SELECT * FROM student";
         Map<String, List<String>> query = jdbcTemplate.query(sql, new groupStudentByResultSetExtractor());
 
         return query;
