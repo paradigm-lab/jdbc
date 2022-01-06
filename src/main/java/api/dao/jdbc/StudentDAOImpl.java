@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import result.set.extractor.StudentResultSetExtractor;
-import rowmapper.google.selenium.StudentRowMapper;
+import result.set.extractor.groupStudentByResultSetExtractor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -105,10 +105,10 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public Map<String, List<Student>> groupStudentByAddress() {
+    public Map<String, List<String>> groupStudentByAddress() {
         String sql = "SELECT student_addres, student_name FROM student WHERE student_addres = 'new york' OR student_addres = 'Blr' ";
-        Map<String, List<Student>> studentMap = jdbcTemplate.query(sql, );
+        Map<String, List<String>> query = jdbcTemplate.query(sql, new groupStudentByResultSetExtractor());
 
-        return studentMap;
+        return query;
     }
 }
