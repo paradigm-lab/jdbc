@@ -26,6 +26,8 @@ public class StudentResultSetExtractor implements ResultSetExtractor<List<Studen
             studentList.add(student);
         }
 
+        System.out.println("Inside the extractData method of ResultSetExtractor");
+
         return studentList;
     }
 }
