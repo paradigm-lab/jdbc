@@ -32,7 +32,7 @@ public class Test {
         System.out.println(student.toString());
 
         // CLEAN UP THE TABLE DATA
-        studentDAOImpl.cleanUp();
+        //studentDAOImpl.cleanUp();
 
         /*
         Student newStudent1 = new Student();
