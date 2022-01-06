@@ -14,9 +14,11 @@ public class StudentResultSetExtractor implements ResultSetExtractor<List<Studen
 
     @Override
     public List<Student> extractData(ResultSet rs) throws SQLException, DataAccessException {
+        int increament = 0;
 
         List<Student> studentList = new ArrayList<Student>();
         while(rs.next()) {
+            increament++;
             Student student = new Student();
 
             student.setRollNo(rs.getInt("roll_no"));
@@ -24,6 +26,7 @@ public class StudentResultSetExtractor implements ResultSetExtractor<List<Studen
             student.setAddress(rs.getString("student_addres"));
 
             studentList.add(student);
+            System.out.println("This is the iteration of the ResultSet extractor: " + increament);
         }
 
         System.out.println("Inside the extractData method of ResultSetExtractor");
