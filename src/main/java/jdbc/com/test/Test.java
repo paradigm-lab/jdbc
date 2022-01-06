@@ -8,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.api.com.StudentDAOHelper;
 
 import java.util.List;
+import java.util.Map;
 
 public class Test {
     public static void main(String[] args) {
@@ -21,12 +22,17 @@ public class Test {
 
         StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
 
+        Map<String, List<String>> groupStudentByAddress = studentDAOImpl.groupStudentByAddress();
+        System.out.println(groupStudentByAddress);
+
+        /*
         // Using the result Set Extractor
         System.out.println("Printing students where the name is Collins>>>>>>>>");
         System.out.println("Using ResultSetExtractor approach>>>>>>>>>");
 
         List<Student> findStudentByName = studentDAOImpl.findStudentByName("Collins");
         studentDAOHelper.printStudent(findStudentByName);
+
 
         // Using the RowMapper
         System.out.println("***********************************************");
@@ -36,7 +42,7 @@ public class Test {
         List<Student> students = studentDAOImpl.findAllStudent();
         studentDAOHelper.printStudent(students);
 
-        /*
+
         // SETTING UP THE TABLE DATA
         studentDAOHelper.setUpStudentTable();
 
