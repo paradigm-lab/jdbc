@@ -92,4 +92,13 @@ public class StudentDAOImpl implements StudentDAO {
 
         return student;
     }
+
+    @Override
+    public List<Student> findStudentByName(String name) {
+        String sql = "SELECT * FROM student";
+
+        jdbcTemplate.query(sql, );
+
+        return null;
+    }
 }
