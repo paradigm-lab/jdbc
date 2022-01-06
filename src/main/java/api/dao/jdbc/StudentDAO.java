@@ -21,6 +21,6 @@ public interface StudentDAO {
 
     List<Student> findStudentByName(String name);
 
-    Map<String, List<Student>> groupStudentByAddress();
+    Map<String, List<String>> groupStudentByAddress();
 
 }
