@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.api.com.StudentDAOHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -35,7 +36,14 @@ public class Test {
         George.setAddress("Zanzibar");
         George.setRollNo(5);
 
-        studentDAOImpl.updateStudent();
+        List<Student> studentList = new ArrayList<Student>();
+        studentList.add(Collins);
+        studentList.add(Luka);
+        studentList.add(George);
+
+        studentDAOImpl.updateStudent(studentList);
+
+        //studentDAOImpl.updateStudent();
 
         /*
         Map<String, List<String>> groupStudentByAddress = studentDAOImpl.groupStudentByAddress();
