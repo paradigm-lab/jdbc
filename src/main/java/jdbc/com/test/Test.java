@@ -23,10 +23,19 @@ public class Test {
         StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
 
         Student Collins = new Student();
-        Collins.setAddress("USA");
+        Collins.setAddress("Australia");
         Collins.setRollNo(2);
 
+        Student Luka = new Student();
+        Luka.setAddress("Tanzania");
+        Luka.setRollNo(4);
         studentDAOImpl.updateStudent(Collins);
+
+        Student George = new Student();
+        George.setAddress("Zanzibar");
+        George.setRollNo(5);
+
+        studentDAOImpl.updateStudent();
 
         /*
         Map<String, List<String>> groupStudentByAddress = studentDAOImpl.groupStudentByAddress();
