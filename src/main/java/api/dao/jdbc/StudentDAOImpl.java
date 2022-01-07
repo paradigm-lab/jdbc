@@ -2,12 +2,15 @@ package api.dao.jdbc;
 
 import com.jdbc.api.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import result.set.extractor.StudentResultSetExtractor;
 import result.set.extractor.groupStudentByResultSetExtractor;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -118,5 +121,29 @@ public class StudentDAOImpl implements StudentDAO {
         Object[] args = {student.getAddress(), student.getRollNo()};
         System.out.println("Row updated");
         return jdbcTemplate.update(sql, args);
+    }
+
+    @Override
+    public int updateStudent(List<Student> studentList) {
+        String sql = "UPDATE student SET student_addres = ? WHERE roll_no = ?";
+        jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement ps, int index) throws SQLException {
+
+                // I need to set the arguments for the preparedstatement
+                ps.setString(1, studentList.get(index).getAddress());
+                ps.setInt(2, studentList.get(index).getRollNo());
+
+            }
+
+            @Override
+            public int getBatchSize() {
+                // In this method we need to define how many times our query will execute
+                // How many times the seValues() is going to execute?
+
+                return studentList.size();
+            }
+        });
+        return 0;
     }
 }
