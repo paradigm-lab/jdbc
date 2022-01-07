@@ -134,13 +134,14 @@ public class StudentDAOImpl implements StudentDAO {
                 ps.setString(1, studentList.get(index).getAddress());
                 ps.setInt(2, studentList.get(index).getRollNo());
 
+                System.out.println("Inside the setValues method");
             }
 
             @Override
             public int getBatchSize() {
                 // In this method we need to define how many times our query will execute
                 // How many times the seValues() is going to execute?
-
+                System.out.println("Inside the getBatchSize method >> set value method will run for " + studentList.size());
                 return studentList.size();
             }
         });
