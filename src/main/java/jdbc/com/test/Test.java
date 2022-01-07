@@ -34,9 +34,7 @@ public class Test {
         //studentDAOImpl.updateStudent(Collins);
 
         Student George = new Student();
-        George.setAddress("Java 3D, Java Access Bridge, Java Accessibility, Java Advanced Imaging, " +
-                "Java Internationalization and Localization Toolkit, Java Look and Feel, Java Media Framework (JMF), " +
-                "Java Web Start (JAWS), JIMI SDK");
+        George.setAddress("Dar-es-Salaam");
         George.setRollNo(5);
 
         List<Student> studentList = new ArrayList<Student>();
