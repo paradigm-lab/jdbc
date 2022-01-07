@@ -41,6 +41,7 @@ public class Test {
         studentList.add(Luka);
         studentList.add(George);
 
+        // Starting the batch update
         studentDAOImpl.updateStudent(studentList);
 
         //studentDAOImpl.updateStudent();
