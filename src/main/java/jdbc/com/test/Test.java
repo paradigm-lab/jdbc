@@ -24,17 +24,19 @@ public class Test {
         StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
 
         Student Collins = new Student();
-        Collins.setAddress("Australia11");
+        Collins.setAddress("Kolkatta");
         Collins.setRollNo(2);
 
         Student Luka = new Student();
-        Luka.setAddress("Tanzania11");
+        Luka.setAddress("Denver new");
         Luka.setRollNo(4);
 
         //studentDAOImpl.updateStudent(Collins);
 
         Student George = new Student();
-        George.setAddress("Zanzibar11");
+        George.setAddress("Java 3D, Java Access Bridge, Java Accessibility, Java Advanced Imaging, " +
+                "Java Internationalization and Localization Toolkit, Java Look and Feel, Java Media Framework (JMF), " +
+                "Java Web Start (JAWS), JIMI SDK");
         George.setRollNo(5);
 
         List<Student> studentList = new ArrayList<Student>();
