@@ -24,19 +24,17 @@ public class Test {
         StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
 
         Student Collins = new Student();
-        Collins.setAddress("Australia");
+        Collins.setAddress("Australia11");
         Collins.setRollNo(2);
 
         Student Luka = new Student();
-        Luka.setAddress("Tanzania");
+        Luka.setAddress("Tanzania11");
         Luka.setRollNo(4);
 
         //studentDAOImpl.updateStudent(Collins);
 
         Student George = new Student();
-        George.setAddress("Zanzibar is a good place to be it is wonderful and full of amazing stuffs good environment we also have there good " +
-                "place to visit and is a good place for tourism and the place is very clean " +
-                "We also have people with there own traditions");
+        George.setAddress("Zanzibar11");
         George.setRollNo(5);
 
         List<Student> studentList = new ArrayList<Student>();
@@ -45,7 +43,8 @@ public class Test {
         studentList.add(George);
 
         // Starting the batch update
-        studentDAOImpl.updateStudent(studentList);
+        int updatedRowCount = studentDAOImpl.updateStudent(studentList);
+        System.out.println(updatedRowCount + "No of rows affected.......");
 
         //studentDAOImpl.updateStudent();
 
