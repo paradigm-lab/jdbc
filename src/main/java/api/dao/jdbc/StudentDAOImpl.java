@@ -125,8 +125,10 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public int updateStudent(List<Student> studentList) {
+        int updatedRowCount = 0;
+
         String sql = "UPDATE student SET student_addres = ? WHERE roll_no = ?";
-        jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
+        int[] batchUpdate = jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement ps, int index) throws SQLException {
 
@@ -145,6 +147,15 @@ public class StudentDAOImpl implements StudentDAO {
                 return studentList.size();
             }
         });
-        return 0;
+
+        for (int i = 0; i < batchUpdate.length; i++) {
+
+            if(batchUpdate[i] == 1) {
+                updatedRowCount++;
+            }
+
+        }
+
+        return updatedRowCount;
     }
 }
