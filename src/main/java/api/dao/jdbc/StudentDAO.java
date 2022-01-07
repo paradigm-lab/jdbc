@@ -23,4 +23,6 @@ public interface StudentDAO {
 
     Map<String, List<String>> groupStudentByAddress();
 
+    int updateStudent(Student student);
+
 }
