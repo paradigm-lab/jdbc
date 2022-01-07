@@ -116,7 +116,7 @@ public class StudentDAOImpl implements StudentDAO {
     public int updateStudent(Student student) {
         String sql = "UPDATE student SET student_addres = ? WHERE roll_no = ?";
         Object[] args = {student.getAddress(), student.getRollNo()};
-
+        System.out.println("Row updated");
         return jdbcTemplate.update(sql, args);
     }
 }
