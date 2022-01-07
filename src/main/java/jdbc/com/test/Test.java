@@ -22,10 +22,17 @@ public class Test {
 
         StudentDAOHelper studentDAOHelper = context.getBean("studentDaoHelper", StudentDAOHelper.class);
 
+        Student Collins = new Student();
+        Collins.setAddress("USA");
+        Collins.setRollNo(2);
+
+        studentDAOImpl.updateStudent(Collins);
+
+        /*
         Map<String, List<String>> groupStudentByAddress = studentDAOImpl.groupStudentByAddress();
         System.out.println(groupStudentByAddress);
 
-        /*
+
         // Using the result Set Extractor
         System.out.println("Printing students where the name is Collins>>>>>>>>");
         System.out.println("Using ResultSetExtractor approach>>>>>>>>>");
