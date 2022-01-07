@@ -30,10 +30,13 @@ public class Test {
         Student Luka = new Student();
         Luka.setAddress("Tanzania");
         Luka.setRollNo(4);
-        studentDAOImpl.updateStudent(Collins);
+
+        //studentDAOImpl.updateStudent(Collins);
 
         Student George = new Student();
-        George.setAddress("Zanzibar");
+        George.setAddress("Zanzibar is a good place to be it is wonderful and full of amazing stuffs good environment we also have there good " +
+                "place to visit and is a good place for tourism and the place is very clean " +
+                "We also have people with there own traditions");
         George.setRollNo(5);
 
         List<Student> studentList = new ArrayList<Student>();
