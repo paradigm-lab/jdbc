@@ -6,7 +6,7 @@ plugins {
 
 
 apply plugin: 'application'
-mainClassName = "jdbc.com.test.Test"
+mainClassName = "com.jdbc.test.Test"
 
 group 'Test'
 version '1.0-SNAPSHOT'
