@@ -34,6 +34,16 @@ public class StudentDAOImpl implements StudentDAO{
         System.out.println("No of row inserted is: " + noOfRowInserted);
     }
 
+    @Override
+    public boolean deleteRecordByRollNo(int rollNo) {
+
+        String sql = "DELETE FROM Student WHERE rool_no = ?";
+
+        int rowUpdated = jdbcTemplate.update(sql, rollNo);
+
+        return rowUpdated == 1;
+    }
+
     /*
     public DataSource getDataSource() {
         String url = "jdbc:postgresql://localhost:5432/student?useSSL=false";
