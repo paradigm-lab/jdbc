@@ -63,6 +63,8 @@ public class Test {
         }
         */
 
+        // studentDAO.deleteRecordByStudentNameOrStudentAddress("Collin", "Pune");
+
     }
 
 }
