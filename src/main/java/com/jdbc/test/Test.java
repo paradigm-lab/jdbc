@@ -63,7 +63,12 @@ public class Test {
         }
         */
 
+
+        // Delete Record by the Student Name and Student Address
         // studentDAO.deleteRecordByStudentNameOrStudentAddress("Collin", "Pune");
+
+        // Truncate the Table
+        studentDAO.cleanUp();
 
     }
 
