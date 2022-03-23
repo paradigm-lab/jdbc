@@ -3,9 +3,9 @@ package com.jdbc.dao;
 import com.jdbc.api.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository("studentDao")
 public class StudentDAOImpl implements StudentDAO{
 
     @Autowired
