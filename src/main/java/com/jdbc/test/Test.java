@@ -3,6 +3,7 @@ package com.jdbc.test;
 import com.jdbc.api.Student;
 import com.jdbc.dao.StudentDAO;
 import com.jdbc.dao.StudentDAOImpl;
+import com.jdbc.service.StudentDAOHelper;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Test {
@@ -13,6 +14,7 @@ public class Test {
         System.out.println("Application Context Loaded...");
 
         StudentDAOImpl studentDAO = context.getBean("studentDao", StudentDAOImpl.class);
+        StudentDAOHelper studentDAOHelper = (StudentDAOHelper) context.getBean("studentDaoHelper");
 
         /*
         // Creating Student class object
@@ -69,6 +71,9 @@ public class Test {
 
         // Truncate the Table
         studentDAO.cleanUp();
+
+        // Batch Insert
+        studentDAOHelper.setUpStudentTable();
 
     }
 
