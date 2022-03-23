@@ -44,6 +44,12 @@ public class StudentDAOImpl implements StudentDAO{
         return rowUpdated == 1;
     }
 
+    @Override
+    public int deleteRecordByStudentNameOrStudentAddress(String studentName, String studentAddress) {
+        
+        return 0;
+    }
+
     /*
     public DataSource getDataSource() {
         String url = "jdbc:postgresql://localhost:5432/student?useSSL=false";
