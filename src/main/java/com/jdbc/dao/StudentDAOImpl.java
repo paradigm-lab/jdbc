@@ -17,6 +17,10 @@ public class StudentDAOImpl implements StudentDAO{
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    // The Update method of the jdbcTemplate is designed to deal with DML Commands
+    // Truncating a table is a part of the DDL command
+    // To perform a DDL operation using jdbcTemplate we use to execute() method
+
     @Override
     public void insert(Student student) {
 
