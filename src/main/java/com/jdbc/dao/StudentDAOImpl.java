@@ -58,6 +58,13 @@ public class StudentDAOImpl implements StudentDAO{
         return noOfRowsDeleted;
     }
 
+
+    public void cleanUp(){
+        String sql = "TRUNCATE TABLE Student";
+        jdbcTemplate.update(sql);
+        System.out.println("Table cleaned up>>>> ");
+    }
+
     /*
     public DataSource getDataSource() {
         String url = "jdbc:postgresql://localhost:5432/student?useSSL=false";
