@@ -2,13 +2,16 @@ package com.jdbc.dao;
 
 import com.jdbc.api.Student;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-
-import javax.sql.DataSource;
 
 public class StudentDAOImpl implements StudentDAO{
 
     private JdbcTemplate jdbcTemplate;
+
+
+    // Creating a Setter method for the dependency Injection
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public void insert(Student student) {

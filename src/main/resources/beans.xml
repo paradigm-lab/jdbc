@@ -24,5 +24,9 @@
         <constructor-arg name="dataSource" ref="dataSource" />
     </bean>
 
+    <bean id="studentDao" class="com.jdbc.dao.StudentDAOImpl" >
+        <property name="jdbcTemplate" ref="jdbcTemplateObject" />
+    </bean>
+
 
 </beans>
