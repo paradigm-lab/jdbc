@@ -102,6 +102,15 @@ public class StudentDAOImpl implements StudentDAO{
         return student;
     }
 
+    @Override
+    public List<Student> findStudentByName(String name) {
+
+        String sql = "SELECT * FROM Student";
+
+        jdbcTemplate.query(sql, rse);
+
+        return null;
+    }
 
     public void cleanUp(){
         String sql = "TRUNCATE TABLE Student";
