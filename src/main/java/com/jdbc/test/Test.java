@@ -77,9 +77,9 @@ public class Test {
         // Batch Insert
         // studentDAOHelper.setUpStudentTable();
 
-        // Select the data from the result set
+        // Select the data from the result set >> FETCHING THE DATA FROM THE TABLE
         List<Student> studentList = studentDAO.findAllStudent();
-        for (Student student)
+        studentDAOHelper.printStudent(studentList);
 
     }
 
