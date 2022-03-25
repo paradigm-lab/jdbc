@@ -6,6 +6,8 @@ import com.jdbc.dao.StudentDAOImpl;
 import com.jdbc.service.StudentDAOHelper;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.List;
+
 public class Test {
 
     public static void main(String[] args){
@@ -70,10 +72,14 @@ public class Test {
         // studentDAO.deleteRecordByStudentNameOrStudentAddress("Collin", "Pune");
 
         // Truncate the Table
-        studentDAO.cleanUp();
+        // studentDAO.cleanUp();
 
         // Batch Insert
-        studentDAOHelper.setUpStudentTable();
+        // studentDAOHelper.setUpStudentTable();
+
+        // Select the data from the result set
+        List<Student> studentList = studentDAO.findAllStudent();
+        for (Student student)
 
     }
 

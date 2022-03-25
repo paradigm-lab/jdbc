@@ -1,6 +1,7 @@
 package com.jdbc.dao;
 
 import com.jdbc.api.Student;
+import com.jdbc.rowmapper.StudentRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -79,6 +80,16 @@ public class StudentDAOImpl implements StudentDAO{
         jdbcTemplate.batchUpdate(sql, sqlArgs);
 
         System.out.println("Batch Update Completed!!!");
+    }
+
+    @Override
+    public List<Student> findAllStudent() {
+
+        String selectSql = "SELECT * FROM Student";
+
+        List<Student> studentList = jdbcTemplate.query(selectSql, new StudentRowMapper());
+
+        return studentList;
     }
 
 
