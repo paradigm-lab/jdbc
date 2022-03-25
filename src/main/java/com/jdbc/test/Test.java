@@ -78,8 +78,14 @@ public class Test {
         // studentDAOHelper.setUpStudentTable();
 
         // Select the data from the result set >> FETCHING THE DATA FROM THE TABLE
-        List<Student> studentList = studentDAO.findAllStudent();
-        studentDAOHelper.printStudent(studentList);
+        /* List<Student> studentList = studentDAO.findAllStudent();
+        studentDAOHelper.printStudent(studentList);*/
+
+        // Querying for a specific object
+        System.out.println("Fetching the student with the roll no 2");
+        Student student = studentDAO.findStudentByRollNo(2);
+        System.out.println(student);
+
 
     }
 

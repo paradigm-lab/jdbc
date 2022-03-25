@@ -3,6 +3,7 @@ package com.jdbc.dao;
 import com.jdbc.api.Student;
 import com.jdbc.rowmapper.StudentRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -94,9 +95,9 @@ public class StudentDAOImpl implements StudentDAO{
 
     @Override
     public Student findStudentByRollNo(int rollNo) {
-        String selectSql = "SELECT * FROM Student WHERE rool_no = ?";
+        String selectSql = "SELECT rool_no as rollNo, student_name as name, student_address as address FROM Student WHERE rool_no = ?";
 
-        Student student = jdbcTemplate.queryForObject(selectSql, new StudentRowMapper(), rollNo);
+        Student student = jdbcTemplate.queryForObject(selectSql, new BeanPropertyRowMapper<Student>(Student.class), rollNo);
 
         return student;
     }
