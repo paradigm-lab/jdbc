@@ -92,6 +92,12 @@ public class StudentDAOImpl implements StudentDAO{
         return studentList;
     }
 
+    @Override
+    public Student findStudentByRollNo(int rollNo) {
+
+        return null;
+    }
+
 
     public void cleanUp(){
         String sql = "TRUNCATE TABLE Student";
