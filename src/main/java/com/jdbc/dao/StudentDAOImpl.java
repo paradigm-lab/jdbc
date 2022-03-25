@@ -1,6 +1,7 @@
 package com.jdbc.dao;
 
 import com.jdbc.api.Student;
+import com.jdbc.resultsetextractor.StudentResultSetExtractor;
 import com.jdbc.rowmapper.StudentRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -105,11 +106,11 @@ public class StudentDAOImpl implements StudentDAO{
     @Override
     public List<Student> findStudentByName(String name) {
 
-        String sql = "SELECT * FROM Student";
+        String sql = "SELECT * FROM Student WHERE student_name = ?";
 
-        jdbcTemplate.query(sql, rse);
+        List<Student> studentsList = jdbcTemplate.query(sql, new StudentResultSetExtractor(), name);
 
-        return null;
+        return studentsList;
     }
 
     public void cleanUp(){
