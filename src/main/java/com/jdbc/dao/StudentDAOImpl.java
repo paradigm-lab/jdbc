@@ -130,6 +130,8 @@ public class StudentDAOImpl implements StudentDAO{
 
         Object[] args = {student.getAddress(), student.getRollNo()};
 
+        System.out.println("Row updated.....");
+
         return jdbcTemplate.update(sql, args);
     }
 
