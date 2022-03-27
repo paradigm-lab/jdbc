@@ -96,9 +96,16 @@ public class Test {
         List<Student> studentListByName = studentDAO.findStudentByName("Collin");
         studentDAOHelper.printStudent(studentListByName);*/
 
-        Map<String, List<String>> groupStudentByAddress = studentDAO.groupStudentByAddress();
-        System.out.println(groupStudentByAddress);
+        // Grouping the Student according to there address
+        /*Map<String, List<String>> groupStudentByAddress = studentDAO.groupStudentByAddress();
+        System.out.println(groupStudentByAddress);*/
 
+
+        Student Collin = new Student();
+        Collin.setAddress("Tanzania");
+        Collin.setRollNo(1);
+
+        studentDAO.updateStudent(Collin);
 
     }
 
