@@ -156,6 +156,7 @@ public class StudentDAOImpl implements StudentDAO{
             @Override
             public int getBatchSize() {
 
+                // It will first get executed
                 // In this method we need to define how many times our query execute
                 // How many times the setValues() is going to execute?
 
