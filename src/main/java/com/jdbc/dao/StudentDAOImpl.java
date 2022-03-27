@@ -124,6 +124,15 @@ public class StudentDAOImpl implements StudentDAO{
         return query;
     }
 
+    @Override
+    public int updateStudent(Student student) {
+        String sql = "UPDATE student SET student_address = ? WHERE rool_no = ?";
+
+        Object[] args = {student.getAddress(), student.getRollNo()};
+
+        return jdbcTemplate.update(sql, args);
+    }
+
     public void cleanUp(){
         String sql = "TRUNCATE TABLE Student";
         jdbcTemplate.execute(sql);
