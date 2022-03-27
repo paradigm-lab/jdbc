@@ -27,4 +27,6 @@ public interface StudentDAO {
 
     int updateStudent(Student student);
 
+    int updateStudent(List<Student> studentList);
+
 }
