@@ -141,9 +141,11 @@ public class StudentDAOImpl implements StudentDAO{
     @Override
     public int updateStudent(List<Student> studentList) {
 
+        int updateCount = 0;
+
         String sql = "UPDATE student SET student_address = ? WHERE rool_no = ?";
 
-        jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
+        int[] batchUpdate = jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement ps, int index) throws SQLException {
                 // I need to set the arguments for the prepared statement
@@ -166,7 +168,13 @@ public class StudentDAOImpl implements StudentDAO{
             }
         });
 
-        return 0;
+        for (int i = 0; i < batchUpdate.length; i++) {
+            if (batchUpdate[i] == 1){
+                updateCount++;
+            }
+        }
+
+        return updateCount;
     }
 
     public void cleanUp(){
