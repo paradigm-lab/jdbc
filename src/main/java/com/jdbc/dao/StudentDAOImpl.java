@@ -61,7 +61,7 @@ public class StudentDAOImpl implements StudentDAO{
 
         String sql = "DELETE FROM Student WHERE student_name = ? OR student_address = ?";
 
-        String[] arguments = {studentName ,studentAddress};
+        Object[] arguments = {studentName ,studentAddress};
 
         int noOfRowsDeleted = jdbcTemplate.update(sql, arguments);
 

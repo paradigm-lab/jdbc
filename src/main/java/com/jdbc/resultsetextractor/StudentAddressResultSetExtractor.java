@@ -19,8 +19,8 @@ public class StudentAddressResultSetExtractor implements ResultSetExtractor<Map<
         Map<String, List<String>> studentTable = new HashMap<>();
 
         while (res.next()) {
-            String studentName = res.getString("student_address");
-            String studentAddress = res.getString("student_name");
+            String studentName = res.getString("student_name");
+            String studentAddress = res.getString("student_address");
 
             List<String> studentsNameList = studentTable.get(studentAddress);
 
