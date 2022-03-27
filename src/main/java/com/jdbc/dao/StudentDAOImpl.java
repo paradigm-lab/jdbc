@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -139,6 +140,7 @@ public class StudentDAOImpl implements StudentDAO{
     }
 
     @Override
+    @Transactional
     public int updateStudent(List<Student> studentList) {
 
         int updateCount = 0;
