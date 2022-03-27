@@ -5,10 +5,13 @@ import com.jdbc.resultsetextractor.StudentAddressResultSetExtractor;
 import com.jdbc.resultsetextractor.StudentResultSetExtractor;
 import com.jdbc.rowmapper.StudentRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -133,6 +136,36 @@ public class StudentDAOImpl implements StudentDAO{
         System.out.println("Row updated.....");
 
         return jdbcTemplate.update(sql, args);
+    }
+
+    @Override
+    public int updateStudent(List<Student> studentList) {
+
+        String sql = "UPDATE student SET student_address = ? WHERE rool_no = ?";
+
+        jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement ps, int index) throws SQLException {
+                // I need to set the arguments for the prepared statement
+                ps.setString(1, studentList.get(index).getAddress());
+                ps.setInt(2, studentList.get(index).getRollNo());
+
+                System.out.println("Inside setValues method");
+            }
+
+            @Override
+            public int getBatchSize() {
+
+                // In this method we need to define how many times our query execute
+                // How many times the setValues() is going to execute?
+
+                System.out.println("Inside getBatchSize method >>>> Set value method will run for " + studentList.size());
+
+                return studentList.size();
+            }
+        });
+
+        return 0;
     }
 
     public void cleanUp(){

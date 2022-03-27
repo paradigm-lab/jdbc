@@ -6,6 +6,7 @@ import com.jdbc.dao.StudentDAOImpl;
 import com.jdbc.service.StudentDAOHelper;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -102,10 +103,24 @@ public class Test {
 
 
         Student Collin = new Student();
-        Collin.setAddress("Tanzania");
+        Collin.setAddress("United States Of America");
         Collin.setRollNo(1);
 
-        studentDAO.updateStudent(Collin);
+        Student David = new Student();
+        David.setAddress("Kenya");
+        David.setRollNo(4);
+
+        Student Kangaroo = new Student();
+        Kangaroo.setAddress("South Africa");
+        Kangaroo.setRollNo(3);
+
+        List<Student> studentList = new ArrayList<Student>();
+        studentList.add(Collin);
+        studentList.add(Kangaroo);
+        studentList.add(David);
+
+        // Starting the Batch update
+        studentDAO.updateStudent(studentList);
 
     }
 
