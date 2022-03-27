@@ -3,6 +3,7 @@ package com.jdbc.dao;
 import com.jdbc.api.Student;
 
 import java.util.List;
+import java.util.Map;
 
 
 // CRUD operations methods
@@ -21,5 +22,7 @@ public interface StudentDAO {
     Student findStudentByRollNo(int rollNo);
 
     List<Student> findStudentByName(String name);
+
+    Map<String, List<String>> groupStudentByAddress();
 
 }
