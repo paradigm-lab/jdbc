@@ -7,6 +7,7 @@ import com.jdbc.service.StudentDAOHelper;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
+import java.util.Map;
 
 public class Test {
 
@@ -78,22 +79,25 @@ public class Test {
         // studentDAOHelper.setUpStudentTable();
 
         // Select the data from the result set >> FETCHING THE DATA FROM THE TABLE
-        System.out.println("Printing all the students from the student table");
+        /*System.out.println("Printing all the students from the student table");
         System.out.println("Using the RowMapper");
         List<Student> studentList = studentDAO.findAllStudent();
-        studentDAOHelper.printStudent(studentList);
+        studentDAOHelper.printStudent(studentList);*/
 
-        System.out.println("*************************************************************");
+        //System.out.println("*************************************************************");
         // Querying for a specific object
         /*System.out.println("Fetching the student with the roll no 2");
         Student student = studentDAO.findStudentByRollNo(2);
         System.out.println(student);*/
 
         // Fetching the Student with the name
-        System.out.println("Printing students where the name is collin>>>>");
+        /*System.out.println("Printing students where the name is collin>>>>");
         System.out.println("Using the ResultSetExtract approach>>>>>");
         List<Student> studentListByName = studentDAO.findStudentByName("Collin");
-        studentDAOHelper.printStudent(studentListByName);
+        studentDAOHelper.printStudent(studentListByName);*/
+
+        Map<String, List<String>> groupStudentByAddress = studentDAO.groupStudentByAddress();
+        System.out.println(groupStudentByAddress);
 
 
     }
