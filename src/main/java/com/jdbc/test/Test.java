@@ -103,15 +103,15 @@ public class Test {
 
 
         Student Collin = new Student();
-        Collin.setAddress("United States Of America");
+        Collin.setAddress("United States Of America 1");
         Collin.setRollNo(1);
 
         Student David = new Student();
-        David.setAddress("Kenya");
+        David.setAddress("Kenya 1");
         David.setRollNo(4);
 
         Student Kangaroo = new Student();
-        Kangaroo.setAddress("South Africa");
+        Kangaroo.setAddress("South Africa 1");
         Kangaroo.setRollNo(3);
 
         List<Student> studentList = new ArrayList<Student>();
@@ -120,7 +120,8 @@ public class Test {
         studentList.add(David);
 
         // Starting the Batch update
-        studentDAO.updateStudent(studentList);
+        int updateStudent = studentDAO.updateStudent(studentList);
+        System.out.println(updateStudent + " No of rows affected...........");
 
     }
 
